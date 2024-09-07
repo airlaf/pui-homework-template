@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Shopping cart</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <body>
+    <!--header w logo-->
+    <header>
+      <a href="product-gallery.html">
+        <img class="logo" src="assets/logo/logo-01.svg" alt="Bun Bun Logo"/>
+      </a>
+    </header>
+    
+    <!--product and cart nav links-->
+    <nav>
+      <div>
+        <a href="product-gallery.html">Products</a>
+      </div>
+      <div>
+        <a href="shopping-cart.html">Cart</a>
+      </div>
+    </nav>
+
+    <main>
+      <!--shopping cart title-->
+      <h1>Shopping Cart</h1>
+  
+       <!--shopping cart items-->
+       <div class="cart-item">
+        <img src="assets/products/original-cinnamon-roll.jpg" class="cart-item-image">
+        <p class="remove-item">Remove</p>
+          <div class="cart-item-text">
+            <p>Original Cinnamon Roll</p>
+            <p>Glazing: Keep original</p>
+            <p>Pack Size: 1</p>
+          </div>  
+        <p class="cart-item-price">$2.49</p>
+      </div>
+
+      <div class="cart-item">
+        <img src="assets/products/double-chocolate-cinnamon-roll.jpg" class="cart-item-image">
+        <p class="remove-item">Remove</p>
+          <div class="cart-item-text">
+            <p>Double Chocolate Cinnamon Roll</p>
+            <p>Glazing: Sugar milk</p>
+            <p>Pack Size: 6</p>
+          </div>
+        <p class="cart-item-price">$27.45</p>
+      </div>
+
+      <!--cart divider-->
+      <hr class="cart-divider">
+
+      <!--total price and checkout button-->
+      <div class="cart-total">
+        <p>Total: $29.94</p>
+      </div>
+
+      <button class="checkout-button">Checkout</button>
+    </main>
+  
+
+  </body>
+</html>

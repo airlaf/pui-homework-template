@@ -1,0 +1,222 @@
+/*general styling*/
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/*header section, logo in top left corner*/
+header {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 3px solid black;
+}
+
+.logo {
+  width: 400px; /*logo width 400px*/
+  height: auto;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/*navigation links*/
+nav {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+nav div {
+  margin-bottom: 15px; /*space in between nav links*/
+}
+
+
+nav a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  font-weight: bold;
+  background-color: yellow;
+}
+
+/*main content*/
+main {
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/*product gallery layout*/
+.product-gallery {
+  display: block;
+}
+
+.product-item {
+  width: 400px;
+  margin: 30px auto 50px auto;
+  position: relative;
+}
+
+/*yellow background and pointer in hover state*/
+.product-item:hover {
+  background-color: yellow;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/*400px product item images*/
+.product-item img {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+
+/*add underline to product name only*/
+.product-item p:first-of-type {
+  text-decoration: underline;
+  margin: 5px 0;
+}
+
+.product-item:hover p:first-of-type {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/*product price has no underline*/
+.product-item p:last-of-type {
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+/*no text decoration when linked*/
+a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+/*product detail layout*/
+/*product image size 600px*/
+.product-detail-image {
+  width: 600px;
+  height: 600px;
+  margin-top: 20px;
+  object-fit: cover;
+  border: 2px solid #000;
+}
+
+.product-description {
+  width: 200px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/*dropdown label is above each dropdown menu*/
+label {
+  margin-top: 20px;
+  display: block; 
+  text-align: left;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*dropdown menu*/
+select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+}
+
+/*price and add to cart*/
+.product-price {
+  margin-top: 60px;
+}
+
+.product-price span {
+  font-weight: bold;
+  margin-right: 20px; /*spacing between price and add to cart*/
+}
+
+.add-to-cart {
+  background-color: white; 
+  border: 2px solid black; 
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*yellow in hover state*/
+.add-to-cart:hover {
+  background-color: yellow; 
+}
+
+/*shopping cart layout*/
+/*cart item image size 200px*/
+.cart-item-image {
+  width: 200px; 
+  height: 200px; 
+  object-fit: cover;
+  border: 2px solid black;
+  margin-top: 20px;
+}
+
+/*smaller remove underlined text*/
+.remove-item {
+  font-size: 14px; 
+  text-decoration: underline; 
+  margin-top: 10px;
+}
+
+/*spacing adjustments for cart item text*/
+.cart-item-text p {
+  margin: 2px 0; 
+}
+
+.cart-item-price {
+  margin-top: 30px; 
+  display: block;
+}
+
+/*cart divider has shorter width and thicker border*/
+.cart-divider {
+  width: 50%; 
+  border: 2px solid black;
+  margin: 40px auto; 
+}
+
+/*checkout button styling*/
+.checkout-button {
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+  background-color: white; 
+  border: 2px solid black; 
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*yellow in hover state*/
+.checkout-button:hover {
+  background-color: yellow; 
+}
+
+

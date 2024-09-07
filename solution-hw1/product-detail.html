@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Product detail</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <body>
+    <header>
+      <a href="product-gallery.html">
+        <img class="logo" src="assets/logo/logo-01.svg"/>
+      </a>
+    </header>
+  
+    <nav>
+      <div>
+        <a href="product-gallery.html">Products</a>
+      </div>
+      <div>
+        <a href="shopping-cart.html">Cart</a>
+      </div>
+    </nav>
+
+    <main>
+      <!--product title-->
+      <h1>Original Cinnamon Roll</h1>
+  
+      <!--product image-->
+      <img src="assets/products/original-cinnamon-roll.jpg" class="product-detail-image">
+  
+      <!--product description-->
+      <p class="product-description">Customize our delicious, hand-made cinnamon roll to your liking!</p>
+  
+      <!--glazing label then dropdown-->
+      <label for="glazing">Glazing:</label>
+      <select name="glazing" id="glazing">
+        <option value="original">Keep original</option>
+        <option value="sugar-milk">Sugar milk</option>
+        <option value="vanilla-milk">Vanilla milk</option>
+        <option value="double-chocolate">Double chocolate</option>
+      </select>
+  
+      <!--pack size label then dropdown-->
+      <label for="pack-size">Pack size:</label>
+      <select name="pack-size" id="pack-size">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="12">12</option>
+      </select>
+  
+      <!-- Price and Add to Cart button -->
+      <div class="product-price">
+        <span>$2.49</span>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </main>
+  
+
+  </body>
+</html>
