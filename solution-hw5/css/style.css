@@ -1,0 +1,327 @@
+/*general body styling*/
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/*header section, logo in top left corner*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 400px; /*logo width 400px*/
+  height: auto;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/*navigation links set to top right*/
+nav {
+  position: absolute;
+  display: flex;
+  top: 60px;
+  right: 75px;
+  gap: 50px; /*add space between nav links*/
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  position: relative;
+}
+
+nav a:hover {
+  font-weight: bold;
+  background-color: yellow;
+}
+
+/*header border*/
+header::after {
+  content: "";
+  position: absolute;
+  top: 120px;
+  left: 470px;
+  right: 0;
+  height: 4px;
+  background-color: black;
+}
+
+/*main content*/
+main {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/*header*/
+h1 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: normal;
+  position: absolute;
+  top: 200px; 
+  left: 470px; /*position it to the right of the logo*/
+  text-align: left; /*align text to the left*/
+}
+
+/*product gallery layout*/
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /*always 3 items per row*/
+  gap: 10px; /*spacing between gallery items*/
+  margin: 0 auto; 
+  max-width: 1200px;
+}
+
+.product-item {
+  width: 100%; 
+  margin-bottom: 50px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/*yellow background and pointer in hover state*/
+.product-item:hover {
+  background-color: yellow;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/*285px product item images*/
+.product-item img {
+  width: 285px;
+  height: 285px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+
+/*add underline to product name only*/
+.product-item p:first-of-type {
+  text-decoration: underline;
+  margin: 5px 0;
+}
+
+.product-item:hover p:first-of-type {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/*product price has no underline*/
+.product-item p:last-of-type {
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+/*no text decoration when linked*/
+a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+
+/*product detail page layout*/
+.product-detail-container {
+  display: flex;
+  justify-content: space-between; /*spread items across container*/
+  align-items: flex-start; /*align items to the top*/
+  gap: 60px; 
+  padding: 0 120px;
+  margin-bottom: 30px;
+}
+
+/*product image size 600px*/
+.product-detail-image {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border: 2px solid #000;
+}
+
+.product-details {
+  flex: 1; /*allow section to take up remaining space*/
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  padding: 0 20px;
+}
+
+.product-description {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/*dropdown label is above each dropdown menu*/
+label {
+  display: block; 
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+/*dropdown menu*/
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+
+/*price and add to cart*/
+.product-price {
+  font-size: 20px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /*align price and button horizontally*/
+  gap: 30px;
+}
+
+.product-price span {
+  font-weight: bold;
+}
+
+.add-to-cart {
+  background-color: white; 
+  border: 2px solid black; 
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*yellow and pointer in hover state*/
+.add-to-cart:hover {
+  background-color: yellow; 
+  cursor: pointer;
+}
+
+
+/*shopping cart page layout*/
+.cart-container {
+  margin-right: 150px;
+  margin-left: 480px; /*align container to the right of the logo under the header*/
+}
+
+.cart-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.cart-item-image-container {
+  display: flex;
+  flex-direction: column; /*stack image and remove link vertically*/
+  align-items: left; 
+}
+
+/*cart item image size 200px*/
+.cart-item-image {
+  width: 200px; 
+  height: 200px; 
+  object-fit: cover;
+  border: 2px solid black;
+  margin-bottom: 10px; 
+}
+
+/*smaller remove underlined text*/
+.remove-item {
+  font-size: 18px; 
+  text-decoration: underline; 
+  font-weight: bold;
+  text-align: left;
+}
+
+.cart-item-text {
+  margin-top: 20px;
+  margin-left: 50px;
+  flex: 1; /*allow this section to take up remaining space*/
+  text-align: left; /*align cart item text to the left*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+/*spacing adjustments for cart item text*/
+.cart-item-text p {
+  margin: 10px 0; 
+  font-size: 18px;
+}
+
+.cart-item-price {
+  margin-top: 80px;
+  margin-left: 20px; /*add space between text and price*/
+  font-size: 18px;
+}
+
+/*cart divider has shorter width and thicker border*/
+.cart-divider {
+  width: calc(100% - 630px); /* Adjust based on image width */
+  border: 2px solid black;
+  margin-left: auto;  /* Push the divider to the right */
+  margin-right: 150px;
+}
+
+/*total container layout*/
+.cart-total-container {
+  display: flex;
+  justify-content: space-between; /*align total on the left and price on the right*/
+  align-items: center;
+  margin-top: 20px;
+}
+
+/*total price text styling*/
+.cart-total-text {
+  font-size: 18px;
+  margin-left: 730px;
+}
+
+/*total price styling*/
+.cart-total-price {
+  font-size: 18px;
+  padding-right: 150px;
+}
+
+/*checkout button container layout*/
+.checkout-button-container {
+  display: flex;
+  justify-content: flex-end; /*align button to the right*/
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-right: 150px;
+}
+
+/*checkout button styling*/
+.checkout-button {
+  background-color: white; 
+  border: 2px solid black; 
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*yellow and pointer in hover state*/
+.checkout-button:hover {
+  background-color: yellow; 
+  cursor: pointer;
+}
+
+/* Styling for the "Remove" button hover state */
+.remove-item {
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+

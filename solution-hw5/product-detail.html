@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Product detail</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <body>
+    <!--header w logo-->
+    <header>
+      <a href="index.html">
+        <img class="logo" src="assets/logo/logo-01.svg"/>
+      </a>
+    </header>
+    
+    <!--product and cart nav links-->
+    <nav>
+      <div>
+        <a href="index.html">Products</a>
+      </div>
+      <div>
+        <a href="shopping-cart.html">Cart</a>
+      </div>
+    </nav>
+
+    <main>
+      <!--product title-->
+      <h1>Original Cinnamon Roll</h1>
+
+      <div class="product-detail-container">
+        <!--product image-->
+        <img src="assets/products/original-cinnamon-roll.jpg" class="product-detail-image">
+        
+        <!--product details (description, dropdowns, price)-->
+        <div class="product-details">
+          <!--product description-->
+          <p class="product-description">Customize our delicious, hand-made cinnamon roll to your liking!</p>
+      
+          <!--glazing label then dropdown menu-->
+          <label for="glazing">Glazing:</label>
+          <select name="glazing" id="glazing">
+            <option value="original">Keep original</option>
+            <option value="sugar-milk">Sugar milk</option>
+            <option value="vanilla-milk">Vanilla milk</option>
+            <option value="double-chocolate">Double chocolate</option>
+          </select>
+      
+          <!--pack size label then dropdown menu-->
+          <label for="pack-size">Pack size:</label>
+          <select name="pack-size" id="pack-size">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="12">12</option>
+          </select>
+      
+          <!--price and add to cart button-->
+          <div class="product-price">
+            <span>$2.49</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  
+    <script src="product-price.js"></script>
+    <script src="rollsData.js"></script>
+    <script src="cart.js"></script>
+
+  </body>
+</html>
