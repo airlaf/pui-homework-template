@@ -47,13 +47,12 @@ function displayCartItems(cart) {
     //clear any existing cart items before displaying
     cartItemsContainer.innerHTML = '';
 
-    //loop through cart and display each item
     cart.forEach((roll, index) => {
-        //create a div element for the cart item
+        console.log("Displaying item: ", roll);  // Log each roll to ensure structure is correct
+    
         const cartItemDiv = document.createElement('div');
         cartItemDiv.classList.add('cart-item');
-
-        //set innerHTML for the cart item
+    
         cartItemDiv.innerHTML = `
             <div class="cart-item-image-container">
                 <img src="assets/products/${roll.type.toLowerCase()}-cinnamon-roll.jpg" class="cart-item-image">
@@ -66,13 +65,11 @@ function displayCartItems(cart) {
             </div>
             <p class="cart-item-price">$${roll.price.toFixed(2)}</p>
         `;
-
-        //append cart item div to the cart items container
+    
         cartItemsContainer.appendChild(cartItemDiv);
-
-        //update total price
         totalPrice += roll.price;
     });
+    
 
     //update total price element 
     totalPriceElement.textContent = totalPrice.toFixed(2);
