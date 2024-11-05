@@ -125,76 +125,140 @@ Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-gener
 
 ## Project Description
 
-Briefly restate your motivation and a short description of your project.
+For my final project, I am building a time capsule that captures the history of interaction design. Using an interactive and dynamic timeline, users can navigate through different moments in time and discover the evolution of this field. 
 
 ## High-Fi Prototypes
 
 ### *Prototype 1*
 
-![title for prototype1](images/prototype1.png)
+![Prototype mockup 1](images/prototype1.1.png)
 
-A brief description and summary of the user feedback (\<100 words, 2 images) 
+This first mockup shown here showcases the overall timeline. When users hover over a specific time period, the timeline marker expands to reveal additional details about the selected era. For example, "Apple Macintosh Launch" is used here as a placeholder to illustrate how events will populate the timeline.
 
 ### *Prototype 2*
 
-…
+![Prototype mockup 2](images/prototype1.2.png)
+
+This second mockup shows the pop-up that will appear when the user selects a specific time period. The pop-up consists of imagery and more specific information on the milestone selected. The user can scroll down to learn more or exit the pop-up by selecting the cross icon in the top right corner.
 
 ## Usability Test
 
-Discuss the user feedback you got during the evaluation / usability test (\~300 words). Indicate which feedback you implemented, inspired new directions, or otherwise influenced your final design. 
+For usability testing, I developed a script to encourage participants to think aloud when navigating through my initial prototype. The questions and prompts I crafted focused on seeing if users can intuitively navigate the timeline, access pop-up information on key milestones, and understand the site’s layout and interactive elements.
+
+* Landing Page Exploration:
+  - Prompt: “You’re on the landing page with the prompt ‘Begin Your Journey.’ What would you do next?”
+  - Follow-up: If they don’t click, prompt them to try it, and observe their response.
+
+* Timeline Navigation:
+  - Prompt: “Now that you’re on the timeline page, take a few moments to explore. What stands out to you here?”
+  - Follow-up: “Click on any time period and try to access information on specific milestones.”
+
+* Pop-Up Information Retrieval:
+  - Prompt: "Once you’ve clicked on a milestone, please take a look at the pop-up. Is it easy to find the information you’re looking for?”
+  - Follow-up: “Navigate to another milestone and open its pop-up. Share your experience.”
+
+* Timeline Interaction Feedback:
+  - Prompt: “While exploring the timeline, did you find it easy to identify clickable milestones?”
+  - Follow-up: “Move along the timeline and hover over different moments. How does this experience feel? Is it clear where you can click?”
+
+* Insights I gained:
+  1. Intuitive use: Users liked the interactivity of the timeline but found it difficult to differentiate between the hover and clicking states - they didn’t know that clicking on a specific moment in the timeline would trigger a pop-up
+  2. Navigation cues: One user didn’t really understand what “begin your journey” meant, leading to confusion immediately on the homepage
+  3. Accessibility: Apart from clicking on the timeline, the user didn’t have any other methods of interacting with the timeline, making it inaccessible for many people
+
+* Changes I plan to make:
+  1. Making the pop-up activation more prominent, possibly with a tooltip or slight animation, could help users understand how to access these
+  2. Making the timeline larger, allowing users to navigate through it easier and potentially customize further
+  3. Could implement the keyboard, so users could navigate through the timeline by clicking on the arrow keys
 
 ## Updated Designs
 
-Show screenshots of your updated design based on the user feedback (\<100 words, \~2 images).
+### *Updated Prototype 1*
+
+![Updated prototype mockup 1](images/prototype2.1.png)
+
+In the first updated prototype mockup, I enlarged the timeline significantly to make navigation more intuitive and accessible. When users hover over a milestone card, it transforms into a stack of cards, signaling that there is more content to explore. At the bottom, users now have the option to customize the timeline view by year or by decade, enhancing both visual engagement and interactivity. Additionally, users can navigate the timeline horizontally by pressing the left and right arrow keys, providing a more accessible scrolling experience.
+
+### *Updated Prototype 2*
+
+![Updated prototype mockup 2](images/prototype2.2.png)
+
+In the second updated prototype, the pop-up design has been refined to enhance usability. Rather than occupying the entire screen, the pop-up now covers only a portion beyond the initial milestone card, allowing users to easily see the timeline in the background. This layout signals to users that they can quickly exit the pop-up and continue exploring the timeline without losing their current place.
 
 ## Feedback Summary
 
-Summarize the feedback you received in the lab session and discuss how it influenced your design (\~300 words). 
+In lab, the main feedback focused on making the timeline more accessible and improving the clarity of interactions. Students mentioned that they found it hard to tell which milestones were clickable, which made navigating the timeline confusing. This highlighted the need for more obvious visual cues to help users understand where to interact and know what to expect when they hover or click. This insight was valuable since it directly impacts how easily users can engage with the content.
+
+Another piece of feedback was about accessibility, specifically making the timeline easier to browse. Some students felt that navigating through milestones could be smoother and more intuitive. They suggested customizing the timeline view to allow browsing by year or by decade, which would let users explore at their own pace based on how they want to view historical information. This option would also reduce any overwhelming feeling that might come from scrolling through too much content at once, keeping the experience more user-friendly and adaptable to different browsing preferences.
+
+Additionally, a student suggested adding a light/dark mode toggle. This would give users control over the visual experience and help those who might be viewing the timeline in varied lighting conditions. Light/dark mode options could also make the experience more comfortable for users who may spend longer periods exploring, as it allows them to adjust the display based on their personal preferences or accessibility needs, like reducing eye strain.
+
+Overall, the feedback I got in lab emphasized making interactions clearer and providing flexibility in the viewing experience. I think my updated prototypes address most of these concerns by introducing improved interactions and timeline customization. However, more attention could be paid to enhancing accessibility options, like the light/dark mode, to increase comfort and usability for all users.
 
 ## Milestones
 
-Outline weekly milestones to plan your expected implementation progress until the end of the semester (\~300 words). 
+Outline weekly milestones to plan your expected implementation progress until the end of the semester.
 
 ### *Implementation Plan*
 
 - [ ] Week 9 Oct 28 \- Nov 1:
   - [X] FP1 due
-  - [ ] ...
   
 - [ ] Week 10 Nov 4 \- Nov 8:   
-  - [ ] FP2 due
+  - [X] FP2 due
+  - [ ] Keep iterating and finalizing prototype designs
+  - [ ] Set up project and install necessary dependencies (libaries)
 
 - [ ] Week 11 Nov 11 \- Nov 15:  
-- [ ] Week 12 Nov 18 \- Nov 22:   
-- [ ] Week 13 Nov 25 \- Nov 29:  
+  - [ ] Build out core structure including the landing page and basic static timeline
+  - [ ] Set up a horizontal layout for the timeline with simple milestone placeholders
 
+- [ ] Week 12 Nov 18 \- Nov 22:   
+  - [ ] Begin implementing GSAP or SwiperJS for smooth timeline scrolling
+  - [ ] Use GSAP or Framer Motion to create the stacking effect for milestone hover states
+  - [ ] Add click functionality to open pop-ups when users interact with milestones
+
+- [ ] Week 13 Nov 25 \- Nov 29:  
   - [ ] Thanksgiving  
+  - [ ] Design the pop-up to display milestone information without covering the entire screen
+  - [ ] Implement closing functionality so users can easily exit the pop-up
+
 - [ ] Week 14 Dec 2 \- Dec 6:  
+  - [ ] Enable left/right keyboard navigation on the timeline for accessibility
+  - [ ] Refine all animations, ensuring they’re smooth and unobtrusive
   - [ ] FP4 due 
 
 ### *Libraries and Other Components*
 
 List the JS libraries and other components (if applicable) that you plan to use. 
-* 
-
+* GSAP (GreenSock Animation Platform) - for creating visually engaging interactions
+* KeyboardJS -  Enable keyboard navigation on the timeline
 
 ## Generative AI Use Plan
 
-Outline how you plan to use Generative AI tools to aid in the implementation (\~300 words).
+In implementing my interaction design time capsule site, I plan to use Gen AI tools like ChatGPT and GitHub Copilot thoughtfully to aid in code structuring, troubleshooting, and refining the user experience. Since this is an important personal journey, my goal is to use these tools responsibly, ensuring that they support my learning without replacing critical problem-solving steps.
+
+Gen AI can help me efficiently set up and implement code libraries. For instance, ChatGPT and Copilot can assist in integrating complex libraries like GSAP and SwiperJS by generating foundational code snippets and providing clear examples of how to initialize and control animations. When I need to structure more complex features, such as the hover and click effects on milestones, Gen AI can suggest ways to organize my code effectively. I expect it to guide me through structuring components and managing states, which can be particularly helpful for maintaining the clarity and modularity of the code.
+
+I expect that Gen AI will also be useful for troubleshooting. By identifying common errors or optimization strategies, ChatGPT can save me time in resolving issues that might otherwise slow down progress. For instance, if I encounter bugs in timeline navigation or issues with timeline accessibility, ChatGPT can often suggest alternative methods or help me refine my code.
+
+However, I recognize that Gen AI might not always be suited to project-specific logic or highly detailed UI nuances. Certain interactions, like fine-tuning animations for smoothness or customizing the light/dark mode toggle, may require manual adjustments beyond what AI can offer. Additionally, since Gen AI cannot perform real-time testing, I’ll still need to rely on personal testing and feedback from usability testing to ensure the user experience is polished and accessible. By balancing AI’s support with hands-on coding and testing, I hope to use these tools as a responsible aid to my learning.
 
 ### *Tool Use*
 
  What would you use? Edit the list given your plan. For each tool, explain briefly on what do you expect Generative AI to help you with and what might it not be able to help you with.
 
 * ChatGPT  
-  * I will use it for … because it can help me …  
-  * I will not use it for … because it might not be able to help me with …   
+  * I’ll use ChatGPT for help with structuring components and explaining how to integrate specific libraries (like GSAP for animations or SwiperJS for scrolling)
+  * Help craft engaging copy for each milestone, page descriptions 
 * GitHub Copilot  
-* ...
+  * I might use it to get suggestions for alternative ways to structure code, such as optimizing timeline navigation or refactoring animations, making the codebase cleaner and potentially more efficient.
 
 ### *Responsible Use*
 
-How would you use Generative AI responsibly? 
+One way I’ll ensure responsible use is by treating AI suggestions as starting points rather than final answers. When Generative AI provides code snippets or troubleshooting advice, I plan to review, test, and adapt the suggestions rather than implementing them blindly. For example, if ChatGPT suggests a way to structure my timeline interactions, I’ll evaluate the logic, understand the approach, and make modifications to tailor it to my project’s specific needs. This way, I’m actively involved in every aspect of the code, ensuring I understand why certain choices are made.
+
+Additionally, I’ll use Generative AI as a learning aid, not just a solution generator. By asking it for explanations on unfamiliar libraries or techniques, I can use AI as a tutor to fill in knowledge gaps. For instance, if I’m uncertain about implementing GSAP animations or optimizing accessibility, I’ll seek clarifications from ChatGPT to deepen my understanding of these elements, allowing me to apply this knowledge more independently in future projects. 
 
 ---
 
