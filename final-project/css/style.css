@@ -43,12 +43,11 @@ mark {
   position: absolute;
   height: .12rem;
   padding: 0 4rem;
-  background-color: #888;
+  background: #888; /* Default background */
   list-style-type: none;
-
   --scale: 1;
-
   display: flex;
+  transition: background 0.2s ease, left 0.1s ease; /* Smooth gradient and position transition */
 }
 
 .timeline li {
