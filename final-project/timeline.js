@@ -1,10 +1,20 @@
 const timelineWrapper = document.querySelector('.timeline-wrapper');
 const timeline = document.querySelector('.timeline');
+const gradientOverlay = document.getElementById('gradient-overlay');
 
 // Handle timeline item toggle
 const timelines = document.querySelectorAll('.timeline li .data');
 for (const time of timelines) {
-    time.onclick = () => time.classList.toggle('show');
+    time.onclick = () => {
+        time.classList.toggle('show');
+
+        // Hide the image if the pop-up is shown
+        const parentNode = time.closest('li');
+        const img = parentNode.querySelector('.popup-image');
+        if (img) {
+            img.style.display = time.classList.contains('show') ? 'none' : 'block';
+        }
+    };
 }
 
 // Update timeline position and color based on mouse movement
@@ -25,3 +35,35 @@ timelineWrapper.addEventListener('mousemove', (event) => {
 timelineWrapper.addEventListener('mouseleave', () => {
     timeline.style.background = '#888';
 });
+
+// Update gradient overlay based on mouse position
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth * 100;
+    const y = e.clientY / window.innerHeight * 100;
+    gradientOverlay.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(64, 0, 255, 0.2), transparent 50%)`;
+});
+
+// Handle image display on hover
+document.querySelectorAll('.timeline li').forEach((node) => {
+    const img = node.querySelector('.popup-image');
+    if (img) {
+        node.addEventListener('mouseover', () => {
+            // Only show the image if the pop-up is not displayed
+            const popup = node.querySelector('.data');
+            if (!popup.classList.contains('show')) {
+                img.style.position = 'absolute';
+
+                // Example position logic; adjust as needed
+                img.style.bottom = '65px';
+                img.style.left = '85px';
+
+                img.style.display = 'block';
+            }
+        });
+
+        node.addEventListener('mouseout', () => {
+            img.style.display = 'none';
+        });
+    }
+});
+
