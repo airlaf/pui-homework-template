@@ -1,91 +1,103 @@
+// Gradient effect for the mouse-following background
+const gradientOverlay = document.getElementById('gradient-overlay');
+
+if (gradientOverlay) {
+    document.addEventListener('mousemove', (event) => {
+        const x = (event.clientX / window.innerWidth) * 100;
+        const y = (event.clientY / window.innerHeight) * 100;
+        gradientOverlay.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(64, 0, 255, 0.2), transparent 50%)`;
+    });
+}
+
+// Timeline-specific functionality (only runs if timeline exists on the page)
 const timelineWrapper = document.querySelector('.timeline-wrapper');
 const timeline = document.querySelector('.timeline');
-const gradientOverlay = document.getElementById('gradient-overlay');
 const timelineNodes = Array.from(document.querySelectorAll('.timeline li'));
 let activeIndex = 0; // Start at the first node
 
-// Initialize accessibility attributes
-timelineNodes.forEach((node, index) => {
-    const popup = node.querySelector('.data');
-    node.setAttribute('role', 'button');
-    node.setAttribute('tabindex', '0');
-    node.setAttribute('aria-selected', index === activeIndex ? 'true' : 'false');
-    popup.setAttribute('aria-hidden', 'true');
-});
-
-// Handle timeline item toggle on mouse click
-timelineNodes.forEach((node) => {
-    const popup = node.querySelector('.data');
-    const img = node.querySelector('.popup-image');
-
-    node.addEventListener('click', () => {
-        popup.classList.toggle('show');
-        popup.setAttribute('aria-hidden', !popup.classList.contains('show'));
-        if (img) {
-            img.style.display = popup.classList.contains('show') ? 'none' : 'block';
-        }
+if (timelineWrapper && timeline) {
+    // Initialize accessibility attributes
+    timelineNodes.forEach((node, index) => {
+        const popup = node.querySelector('.data');
+        node.setAttribute('role', 'button');
+        node.setAttribute('tabindex', '0');
+        node.setAttribute('aria-selected', index === activeIndex ? 'true' : 'false');
+        popup.setAttribute('aria-hidden', 'true');
     });
-});
 
-// Update timeline position and color based on mouse movement
-timelineWrapper.addEventListener('mousemove', (event) => {
-    const rect = timelineWrapper.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left; // Position relative to the wrapper
-    const percentage = (mouseX / timelineWrapper.clientWidth) * 100; // Calculate percentage of width
+    // Handle timeline item toggle on mouse click
+    timelineNodes.forEach((node) => {
+        const popup = node.querySelector('.data');
+        const img = node.querySelector('.popup-image');
 
-    // Move the timeline
-    const scrollWidth = mouseX / timelineWrapper.clientWidth * (timelineWrapper.clientWidth - timeline.clientWidth);
-    timeline.style.left = `${scrollWidth.toFixed(1)}px`;
-
-    // Update the gradient background
-    updateProgressLine(mouseX);
-});
-
-// Reset the timeline background on mouse leave
-timelineWrapper.addEventListener('mouseleave', () => {
-    timeline.style.background = '#888';
-});
-
-// Update gradient overlay based on mouse position
-document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth) * 100;
-    const y = (e.clientY / window.innerHeight) * 100;
-    gradientOverlay.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(64, 0, 255, 0.2), transparent 50%)`;
-});
-
-// Handle image display on hover
-timelineNodes.forEach((node) => {
-    const img = node.querySelector('.popup-image');
-    if (img) {
-        node.addEventListener('mouseover', () => {
-            const popup = node.querySelector('.data');
-            if (!popup.classList.contains('show')) {
-                showImage(img);
-                expandNode(node);
+        node.addEventListener('click', () => {
+            popup.classList.toggle('show');
+            popup.setAttribute('aria-hidden', !popup.classList.contains('show'));
+            if (img) {
+                img.style.display = popup.classList.contains('show') ? 'none' : 'block';
             }
         });
+    });
 
-        node.addEventListener('mouseout', () => {
-            hideImage(img);
-            resetNode(node);
-        });
-    }
-});
+    // Update timeline position and color based on mouse movement
+    timelineWrapper.addEventListener('mousemove', (event) => {
+        const rect = timelineWrapper.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left; // Position relative to the wrapper
+        const percentage = (mouseX / timelineWrapper.clientWidth) * 100; // Calculate percentage of width
+
+        // Move the timeline
+        const scrollWidth =
+            (mouseX / timelineWrapper.clientWidth) *
+            (timelineWrapper.clientWidth - timeline.clientWidth);
+        timeline.style.left = `${scrollWidth.toFixed(1)}px`;
+
+        // Update the gradient background
+        updateProgressLine(mouseX);
+    });
+
+    // Reset the timeline background on mouse leave
+    timelineWrapper.addEventListener('mouseleave', () => {
+        timeline.style.background = '#888';
+    });
+}
+
+// Handle image display on hover
+if (timelineNodes.length > 0) {
+    timelineNodes.forEach((node) => {
+        const img = node.querySelector('.popup-image');
+        if (img) {
+            node.addEventListener('mouseover', () => {
+                const popup = node.querySelector('.data');
+                if (!popup.classList.contains('show')) {
+                    showImage(img);
+                    expandNode(node);
+                }
+            });
+
+            node.addEventListener('mouseout', () => {
+                hideImage(img);
+                resetNode(node);
+            });
+        }
+    });
+}
 
 // Add keyboard navigation
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight') {
-        // Move to the next node
-        activeIndex = (activeIndex + 1) % timelineNodes.length;
-        updateFocus();
-    } else if (event.key === 'ArrowLeft') {
-        // Move to the previous node
-        activeIndex = (activeIndex - 1 + timelineNodes.length) % timelineNodes.length;
-        updateFocus();
-    } else if (event.key === ' ') {
-        // Simulate click with the Space key
-        togglePopup();
-        event.preventDefault(); // Prevent page scrolling
+    if (timelineNodes.length > 0) {
+        if (event.key === 'ArrowRight') {
+            // Move to the next node
+            activeIndex = (activeIndex + 1) % timelineNodes.length;
+            updateFocus();
+        } else if (event.key === 'ArrowLeft') {
+            // Move to the previous node
+            activeIndex = (activeIndex - 1 + timelineNodes.length) % timelineNodes.length;
+            updateFocus();
+        } else if (event.key === ' ') {
+            // Simulate click with the Space key
+            togglePopup();
+            event.preventDefault(); // Prevent page scrolling
+        }
     }
 });
 
