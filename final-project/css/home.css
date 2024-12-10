@@ -1,4 +1,4 @@
-/* Homepage-specific styles */
+/*homepage-specific styles*/
 body {
   margin: 0;
   height: 100vh;
@@ -8,7 +8,7 @@ body {
   font-family: 'Instrument Sans', sans-serif;
   background: radial-gradient(circle, rgba(17, 24, 39, 1) 40%, #111);
   overflow: hidden;
-  color: #E5E7EB; /* Updated to a lighter gray for better contrast */
+  color: #E5E7EB; /*updated to a lighter gray for better contrast*/
 }
 
 #gradient-overlay {
@@ -25,18 +25,18 @@ body {
 }
 
 h1 {
-  font-size: 48px; /* 3rem = 48px */
-  margin-bottom: 16px; /* 1rem = 16px */
-  color: #F3F4F6; /* Lighter color for better contrast */
+  font-size: 48px; 
+  margin-bottom: 16px; 
+  color: #F3F4F6; /*lighter color for better contrast*/
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
   animation-delay: 0.2s;
 }
 
 p {
-  font-size: 19.2px; /* 1.2rem = 19.2px */
-  margin-bottom: 32px; /* 2rem = 32px */
-  color: #D1D5DB; /* Updated to improve contrast */
+  font-size: 19.2px;
+  margin-bottom: 32px;
+  color: #D1D5DB; 
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
   animation-delay: 0.8s;
@@ -44,12 +44,12 @@ p {
 
 .btn-primary {
   display: inline-block;
-  padding: 12.8px 32px; /* 0.8rem = 12.8px, 2rem = 32px */
-  font-size: 16px; /* 1rem = 16px */
-  color: #111; /* Darker text on the button for better contrast */
-  background-color: #A5B4FC; /* Lightened button background for better contrast */
+  padding: 12.8px 32px; 
+  font-size: 16px;
+  color: #111; /*darker text on button for better contrast*/
+  background-color: #A5B4FC; /*lightened button background for better contrast*/
   border: none;
-  border-radius: 50px; /* No conversion needed, already in px */
+  border-radius: 50px; 
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -59,11 +59,11 @@ p {
 }
 
 .btn-primary:hover {
-  background-color: #818CF8; /* Ensure hover state maintains sufficient contrast */
+  background-color: #818CF8; /*hover state maintains contrast*/
   transform: scale(1.05);
 }
 
-/* Fade-in animation */
+/*fade in animation*/
 @keyframes fadeIn {
   from {
     opacity: 0;

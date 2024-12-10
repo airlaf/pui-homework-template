@@ -14,34 +14,63 @@ Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/
 Describe your website (300 words).
 
 * What is the purpose of your website?   
+The website is designed as an interaction design time capsule that chronicles the birth and evolution of the field over the past four decades. Its purpose is to fill a notable gap in documenting the history of interaction design, a relatively young and ever-evolving discipline. By providing an accessible resource, the site encourages designers to reflect on and learn from the rich history of the field, using it to inform future innovation rather than focusing solely on the new.
+
 * Who is the target audience?  
-* What information do you convey with your website?   
+The website primarily targets interaction designers seeking to deepen their understanding of the discipline's roots and evolution. Additionally, it is crafted to engage those who are new to the field, offering an approachable way to explore its history. Whether you're a seasoned professional, a student, or simply curious, the website aims to captivate and educate a diverse audience.
+
+* What information do you convey with your website? 
+The website conveys a detailed timeline of interaction design’s development, highlighting pivotal moments, influential projects, and groundbreaking theories that have shaped the discipline. Each milestone is enriched with contextual information, including images, and narratives, making the content both informative and immersive.  
+
 * How is it interesting and engaging? 
+What sets the website apart is its interactivity. Users can explore the timeline in multiple ways, such as hovering over key points, tapping on specific milestones, or navigating using their keyboard. This flexible interface makes the experience playful and inclusive, accommodating different user preferences. By offering a hands-on way to engage with history, the site transforms exploration into an enjoyable activity, ensuring that users not only learn but also have fun as they navigate this unique time capsule.
 
 ## Part 2: User Interaction
 
 How a user would interact with your website? For each step, briefly but clearly state the interaction type & how we should reproduce it.
 
-1. Interaction type. Click on X on page Y / scroll on page X, etc.  
-2. 
+1. Read the homepage description and click on "Begin your journey" (Click)
+2. Read the panel on the top on how to navigate the timeline (Read)
+3. Use the mousepad to swipe to the right/left of the screen, noticing how the timeline progresses with you (Scroll/Swipe)
+4. Hover over a node on the timeline to trigger it to expand (Hover)
+5. Click on the expanded node to access the pop up with more detailed information on the specific milestone (Click)
+6. Click on the pop up again to close it (Click)
+
+Alternative timeline navigation:
+1. Press the right/left arrows on the keyboard to navigate the timeline (Key press)
+2. Once you arrive at the desired milestone, press the space bar to access the pop up (Key press)
+3. Press the space bar again to close the pop up (Key press)
 
 ## Part 3: External Tool
 
 Describe what important external tool you used (JavaScript library, Web API, animations, or other). Following the bulleted list format below, reply to each of the prompts.
 
-1. Name of tool1  
-   * Why did you choose to use it over other alternatives? (2 sentences max)  
+1. Web APIs
+   * Why did you choose to use it over other alternatives? 
+      * I used the Web APIs provided by JavaScript because they are lightweight, natively supported in browsers, and eliminate the need for external libraries for simple DOM manipulation and event handling. This keeps the project efficient and free of unnecessary dependencies.
    * How you used it? (2 sentences max)  
+      * I used the document API to query and manipulate DOM elements, adding event listeners for interactivity, such as handling mouse movements, clicks, and keyboard navigation. Additionally, I leveraged scrollIntoView, querySelector, and getBoundingClientRect for dynamic timeline navigation and positioning.
    * What does it add to your website? (2 sentences max)  
-2. Name of tool2
+      * It enables seamless interactivity and accessibility, allowing users to navigate the timeline, display pop-ups, and interact with hover effects dynamically. This results in a smoother user experience and intuitive interface behavior.
+2. CSS Animations (keyframes)
+   * Why did you choose to use it over other alternatives? 
+      * CSS animations are simple to implement, have minimal performance overhead, and allow smooth transitions without requiring JavaScript libraries like GSAP. They integrate natively with the styling of the webpage, ensuring consistent animations.
+   * How you used it? (2 sentences max)  
+      * I implemented keyframe animations like fadeIn to create smooth fade-ins for the text, buttons, and interactive elements. This was combined with transition effects for hover states and gradient updates to enhance the visual feedback.
+   * What does it add to your website? (2 sentences max)  
+      * The animations add a polished look and make the interactions feel more dynamic and engaging. This enhances user immersion and guides them through the website's interactive timeline effectively.
 
 ## Part 4: Design Iteration
 
 Describe how you iterated on your prototypes, if at all, including any changes you made to your original design while you were implementing your website and the rationale for the changes. (4-8 sentences max)
 
+Throughout my project, I iterated extensively on how to display the milestones on the timeline to balance functionality, clarity, and accessibility. Initially, I designed a more complex timeline where users hovered over lines to access pop-ups, but this proved unintuitive. I then explored a "card" style for each milestone, where users could click to reveal detailed information. Ultimately, I simplified the timeline further to ensure users of all levels could navigate comfortably. The current version condenses the pop-ups into modular elements tied to each milestone, rather than taking over the entire screen, creating a more focused and seamless interaction. I also added a progress bar to provide users with a clear sense of location within the timeline and included a detailed navigation guide at the top for clarity. These changes were informed by accessibility considerations, adhering to WAVE guidelines to ensure inclusivity and usability for a diverse audience. The iterative process allowed me to refine the design, making it intuitive, accessible, and engaging for all users.
+
 ## Part 5: Implementation Challenge
 
 What challenges did you experience in implementing your website? (2-4 sentences max)
+
+I faced challenges in implementing both mousepad and keyboard interactions within the timeline to ensure seamless usability for all users. Balancing these interaction methods while keeping the navigation intuitive required careful planning and testing. Styling the timeline was another hurdle, as I needed to simplify the content delivery without losing its depth or accessibility. Iterating on the design helped me strike a balance between functionality, clarity, and user-friendliness.
 
 ## Part 6: Generative AI Use and Reflection
 

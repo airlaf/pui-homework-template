@@ -1,4 +1,4 @@
-// Gradient effect for the mouse-following background
+//gradient effect for the mouse-following background
 const gradientOverlay = document.getElementById('gradient-overlay');
 
 if (gradientOverlay) {
@@ -9,14 +9,14 @@ if (gradientOverlay) {
     });
 }
 
-// Timeline-specific functionality (only runs if timeline exists on the page)
+//timeline-specific functionality (only runs if timeline exists on the page)
 const timelineWrapper = document.querySelector('.timeline-wrapper');
 const timeline = document.querySelector('.timeline');
 const timelineNodes = Array.from(document.querySelectorAll('.timeline li'));
-let activeIndex = 0; // Start at the first node
+let activeIndex = 0; //start at the first node
 
 if (timelineWrapper && timeline) {
-    // Initialize accessibility attributes
+    //initialize accessibility attributes
     timelineNodes.forEach((node, index) => {
         const popup = node.querySelector('.data');
         node.setAttribute('role', 'button');
@@ -25,7 +25,7 @@ if (timelineWrapper && timeline) {
         popup.setAttribute('aria-hidden', 'true');
     });
 
-    // Handle timeline item toggle on mouse click
+    //handle timeline item toggle on mouse click
     timelineNodes.forEach((node) => {
         const popup = node.querySelector('.data');
         const img = node.querySelector('.popup-image');
@@ -39,29 +39,29 @@ if (timelineWrapper && timeline) {
         });
     });
 
-    // Update timeline position and color based on mouse movement
+    //update timeline position and color based on mouse movement
     timelineWrapper.addEventListener('mousemove', (event) => {
         const rect = timelineWrapper.getBoundingClientRect();
-        const mouseX = event.clientX - rect.left; // Position relative to the wrapper
-        const percentage = (mouseX / timelineWrapper.clientWidth) * 100; // Calculate percentage of width
+        const mouseX = event.clientX - rect.left; //position relative to the wrapper
+        const percentage = (mouseX / timelineWrapper.clientWidth) * 100; //calculate percentage of width
 
-        // Move the timeline
+        //move the timeline
         const scrollWidth =
             (mouseX / timelineWrapper.clientWidth) *
             (timelineWrapper.clientWidth - timeline.clientWidth);
         timeline.style.left = `${scrollWidth.toFixed(1)}px`;
 
-        // Update the gradient background
+        //update gradient background
         updateProgressLine(mouseX);
     });
 
-    // Reset the timeline background on mouse leave
+    //reset the timeline background on mouse leave
     timelineWrapper.addEventListener('mouseleave', () => {
         timeline.style.background = '#888';
     });
 }
 
-// Handle image display on hover
+//image display on hover
 if (timelineNodes.length > 0) {
     timelineNodes.forEach((node) => {
         const img = node.querySelector('.popup-image');
@@ -82,26 +82,26 @@ if (timelineNodes.length > 0) {
     });
 }
 
-// Add keyboard navigation
+//add keyboard navigation
 document.addEventListener('keydown', (event) => {
     if (timelineNodes.length > 0) {
         if (event.key === 'ArrowRight') {
-            // Move to the next node
+            //move to the next node
             activeIndex = (activeIndex + 1) % timelineNodes.length;
             updateFocus();
         } else if (event.key === 'ArrowLeft') {
-            // Move to the previous node
+            //move to the previous node
             activeIndex = (activeIndex - 1 + timelineNodes.length) % timelineNodes.length;
             updateFocus();
         } else if (event.key === ' ') {
-            // Simulate click with the Space key
+            //simulate click with space key
             togglePopup();
-            event.preventDefault(); // Prevent page scrolling
+            event.preventDefault(); //prevent page scrolling
         }
     }
 });
 
-// Update focus to simulate hover
+//update focus to simulate hover
 function updateFocus() {
     timelineNodes.forEach((node, index) => {
         const popup = node.querySelector('.data');
@@ -110,37 +110,37 @@ function updateFocus() {
 
         if (index === activeIndex) {
             node.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-            title.style.opacity = '1'; // Simulate hover title visibility
+            title.style.opacity = '1'; //simulate hover title visibility
             node.setAttribute('aria-selected', 'true');
 
-            // Show the image and expand the node
+            //show image and expand the node
             if (img && !popup.classList.contains('show')) {
                 showImage(img);
                 expandNode(node);
             }
 
-            // Update the progress line
+            //update progress line
             const nodeRect = node.getBoundingClientRect();
             const timelineRect = timelineWrapper.getBoundingClientRect();
             const positionX = nodeRect.left - timelineRect.left + nodeRect.width / 2;
             updateProgressLine(positionX);
         } else {
-            title.style.opacity = '0'; // Hide titles of non-hovered nodes
+            title.style.opacity = '0'; //hide titles of non-hovered nodes
             node.setAttribute('aria-selected', 'false');
 
-            // Hide the image and reset the node
+            //hide the image and reset the node
             if (img) {
                 hideImage(img);
                 resetNode(node);
             }
 
-            // Ensure no pop-ups are visible during navigation
+            //ensure no pop-ups are visible during navigation
             popup.classList.remove('show');
         }
     });
 }
 
-// Toggle the pop-up for the active node
+//toggle the pop-up for the active node
 function togglePopup() {
     const activeNode = timelineNodes[activeIndex];
     const popup = activeNode.querySelector('.data');
@@ -150,20 +150,20 @@ function togglePopup() {
     popup.classList.toggle('show');
     popup.setAttribute('aria-hidden', isPopupVisible ? 'true' : 'false');
 
-    // Manage image visibility based on pop-up state
+    //manage image visibility based on pop-up state
     if (img) {
         img.style.display = isPopupVisible ? 'block' : 'none';
     }
 }
 
-// Update the progress line color
+//update progress line color
 function updateProgressLine(positionX) {
     const rect = timelineWrapper.getBoundingClientRect();
-    const percentage = ((positionX - rect.left) / timelineWrapper.clientWidth) * 100; // Calculate percentage of width
+    const percentage = ((positionX - rect.left) / timelineWrapper.clientWidth) * 100; //calculate percentage of width
     timeline.style.background = `linear-gradient(to right, #4000ff ${percentage}%, #888 ${percentage}%)`;
 }
 
-// Helper functions to manage node states
+//helper functions to manage node states
 function expandNode(node) {
     node.style.transform = 'scale(1.3)';
     node.querySelector('.data').style.backgroundColor = 'var(--primary-color)';
@@ -174,7 +174,7 @@ function resetNode(node) {
     node.querySelector('.data').style.backgroundColor = '#888';
 }
 
-// Helper functions to manage image display
+//helper functions to manage image display
 function showImage(img) {
     img.style.position = 'absolute';
     img.style.bottom = '65px';

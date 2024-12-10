@@ -1,22 +1,22 @@
 :root {
-  --primary-color: #7575EB; /* Primary color for hover effects and highlights */
+  --primary-color: #7575EB; /*primary color for hover effects and highlights*/
 }
 
-/* Reset and font styling */
+/*reset and font styling*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Instrument Sans', sans-serif; /* Default font for the entire page */
+  font-family: 'Instrument Sans', sans-serif; /*default font for the entire page*/
 }
 
-/* Body styles */
+/*body styles*/
 body {
-  background-color: #111; /* Dark background for contrast */
-  color: #fff; /* Light text for readability */
+  background-color: #111; /*dark background for contrast*/
+  color: #fff; /*light text for readability*/
 }
 
-/* Overlay gradient for aesthetics */
+/*overlay gradient for aesthetics*/
 #gradient-overlay {
   position: fixed;
   top: 0;
@@ -27,23 +27,23 @@ body {
   z-index: 1;
 }
 
-/* Fade-in animation for hints and timeline */
+/*fade-in animation for hints and timeline*/
 .hints,
 .timeline-wrapper {
   opacity: 0;
-  animation: fadeInTimeline 1s ease-in-out forwards; /* Smooth fade-in effect */
+  animation: fadeInTimeline 1s ease-in-out forwards; /*smooth fade in*/
 }
 
-/* Hints section at the top */
+/*hints section at the top*/
 .hints {
   text-align: center;
   padding: 22px 0;
   background-color: #222;
   font-weight: 600;
-  line-height: 40px; /* Readability adjustment */
+  line-height: 40px; /*readability adjustment*/
 }
 
-/* Highlighted text in hints */
+/*highlighted text in hints*/
 mark {
   padding: 3px 11px;
   border-radius: 6px;
@@ -51,36 +51,36 @@ mark {
   font-weight: bold;
 }
 
-/* Timeline container */
+/*timeline container*/
 .timeline-wrapper {
   position: relative;
   max-width: 100vw;
-  height: 704px; /* 88vh equivalent */
+  height: 704px; 
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: auto;
-  animation-delay: 0.6s; /* Delay for fade-in animation */
+  animation-delay: 0.6s; /*delay for fade in*/
 }
 
-/* Hide scrollbar for timeline container */
+/*hide scrollbar for timeline container*/
 .timeline-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-/* Main timeline bar */
+/*main timeline bar*/
 .timeline {
   position: absolute;
-  height: 2px; /* Thickness of the timeline */
+  height: 2px; /*thickness of timeline*/
   padding: 0 64px;
   background: #888;
   list-style-type: none;
-  --scale: 1; /* Scale variable for hover effect */
+  --scale: 1; /*scale variable for hover effect*/
   display: flex;
   transition: background 0.2s ease, left 0.1s ease;
 }
 
-/* Fade-in keyframes */
+/*fade-in keyframes*/
 @keyframes fadeInTimeline {
   from {
     opacity: 0;
@@ -92,10 +92,10 @@ mark {
   }
 }
 
-/* Timeline list items (nodes) */
+/*timeline list items (nodes)*/
 .timeline li {
   position: relative;
-  width: 320px; /* 20rem equivalent */
+  width: 320px; 
 }
 
 .timeline li::before,
@@ -109,49 +109,49 @@ mark {
   transition: 0.5s ease;
 }
 
-/* Vertical lines connecting nodes */
+/*vertical lines connecting nodes*/
 .timeline li::before {
   content: "";
-  top: 16px; /* Position for odd nodes */
+  top: 16px; /*position for odd nodes*/
   display: inline-block;
   width: 2px;
-  height: 16px; /* Line length */
+  height: 16px; /*line length*/
   background-color: #888;
 }
 
-/* Adjust position for even nodes */
+/*adjust position for even nodes*/
 .timeline li:nth-child(even)::before {
-  top: -16px; /* Above the node */
+  top: -16px; /*above the node*/
 }
 
-/* Change line color on hover */
+/*change line color on hover*/
 .timeline li:hover::before {
   background-color: var(--primary-color);
 }
 
-/* Dates above/below nodes */
+/*dates above/below nodes*/
 .timeline li::after {
   content: attr(data-date);
-  top: -54px; /* Position above odd nodes */
+  top: -54px; /*position above odd nodes*/
 }
 
 .timeline li:nth-child(odd)::after {
-  top: 54px; /* Position below even nodes */
+  top: 54px; /*position below even nodes*/
 }
 
-/* Titles for each node */
+/*titles for each node*/
 .timeline li .title {
-  top: 38px; /* Default title position */
+  top: 38px; /*default title position*/
   font: 600 18px 'Instrument Sans', sans-serif;
   white-space: pre;
-  opacity: 0; /* Hidden by default */
+  opacity: 0; /*hidden by default*/
 }
 
 .timeline li:nth-child(odd) > .title {
-  top: -38px; /* Adjust position for odd nodes */
+  top: -38px; /*adjust position for odd nodes*/
 }
 
-/* Title and date color on hover */
+/*title and date color on hover*/
 .timeline li:hover::after,
 .timeline li .title {
   color: var(--primary-color);
@@ -161,9 +161,9 @@ mark {
   opacity: 1;
 }
 
-/* Data circles (nodes) */
+/*data circles (nodes)*/
 .data {
-  width: 20px; /* Default circle size */
+  width: 20px; /*default circle size*/
   height: 20px;
   background-color: #888;
   color: white;
@@ -175,7 +175,7 @@ mark {
   transition: 0.3s ease;
 }
 
-/* Data node hover effect */
+/*data node hover*/
 .timeline li:hover .data {
   background-color: var(--primary-color);
   --scale: 1.3;
@@ -183,9 +183,9 @@ mark {
   z-index: 200;
 }
 
-/* Expanded data display (popup) */
+/*expanded data display (popup)*/
 .data.show {
-  width: 352px; /* 22rem equivalent */
+  width: 352px; 
   height: 352px;
   border-radius: 16px;
   padding: 16px;
@@ -194,24 +194,24 @@ mark {
   z-index: 100;
 }
 
-/* Title inside node */
+/*title inside node*/
 .data h3 {
   text-transform: capitalize;
   margin-left: 20px; /*hide when node is not expanded*/
 }
 
 .data.show h3 {
-  margin-left: 0; /*move back to og position when expanded*/
+  margin-left: 0; /*move back to original position when expanded*/
 }
 
-/* Text content inside expanded nodes */
+/*text content inside expanded nodes*/
 .data p {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 16px;
   border-radius: 16px;
 }
 
-/* Close button inside expanded nodes */
+/*close button inside expanded nodes*/
 .data .close {
   align-self: flex-start;
   background-color: rgba(255, 255, 255, 0.2);
@@ -220,35 +220,35 @@ mark {
   font-size: 16px;
 }
 
-/* Popup image styling */
+/*popup image styling*/
 .popup-image {
   position: absolute;
   max-width: 150px;
   border-radius: 10px;
-  display: none; /* Initially hidden */
+  display: none; /*initially hidden*/
   z-index: 300;
   opacity: 80%;
 }
 
-/* Odd-numbered nodes: Image appears above the node */
+/*odd-numbered nodes: image appears above the node*/
 .timeline li:nth-child(odd) .popup-image {
-  bottom: 60px; /* Position above */
+  bottom: 60px;
 }
 
-/* Even-numbered nodes: Image appears below the node */
+/*even-numbered nodes: image appears below the node*/
 .timeline li:nth-child(even) .popup-image {
-  top: 60px; /* Position below */
+  top: 60px; 
 }
 
-/* Display the image on hover */
+/*display the image on hover*/
 .timeline li:hover .popup-image {
-  display: block; /* Show image */
+  display: block; /*Show image*/
 }
 
-/* Primary button styling */
+/*primary button styling*/
 .btn-primary {
   display: inline-block;
-  padding: 13px 32px; /* Button padding */
+  padding: 13px 32px; /*button padding*/
   font-size: 16px;
   color: var(--text-color);
   background-color: var(--primary-color);
@@ -261,5 +261,5 @@ mark {
 
 .btn-primary:hover {
   background-color: var(--secondary-color);
-  transform: scale(1.05); /* Hover effect */
+  transform: scale(1.05); /*hover effect*/
 }
