@@ -141,8 +141,24 @@ For the following aspects of your project, edit the corresponding table cell to 
 Document the usage logs (prompts and chat history links) for the GenAI tools you used. Some tools may not have an easy way to share usage logs, just try your best! Some instructions for different tools:
 
 1. [ChatGPT](https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq) / [Gemini](https://support.google.com/gemini/answer/13743730?hl=en&co=GENIE.Platform%3DDesktop): share the anonymous link to all of your chat histories relevant to this project
+* https://chatgpt.com/share/6757bc49-bfe8-8003-b13e-6f34f7a11130
+* https://chatgpt.com/share/6757bcd1-e548-8003-9a2c-75c33cced9a8
 2. [GitHub Copilot (VSCode)](https://code.visualstudio.com/docs/copilot/copilot-chat#:~:text=You%20can%20export%20all%20prompts%20and%20responses%20for%20a%20chat%20session%20in%20a%20JSON%20file%20with%20the%20Chat%3A%20Export%20Session...%20command%20(workbench.action.chat.export)%20in%20the%20Command%20Palette.): export chat histories relevant to this project.
 
+## Part 7: Responsiveness and Accessibility (added in as per project requirements)
+
+* Responsiveness:
+  * The website is designed with responsiveness in mind, ensuring an optimal experience across various screen sizes. On desktop and tablet devices, the layout provides ample space for the timeline and accompanying content, making it the most suitable format for exploring milestones interactively.
+  * For smaller screens, such as mobile devices, the timeline condenses intelligently. The text size and spacing adjust dynamically to maintain readability without overwhelming the user. Pop-ups for milestones scale proportionally, ensuring all information remains accessible and visible without unnecessary scrolling. 
+
+* Accessibility:
+  * Using WAVE to evaluate my site's accessibility, I identified several areas for improvement, including adding ARIA labels and better structural elements to enhance navigation and screen reader compatibility. One persistent challenge was addressing "contrast color" errors flagged by the tool. To tackle this, I adjusted the color palette, increasing the contrast by using white text against a deep blue (almost black) background. While these changes improved readability, the errors still persisted in some areas.
+  * If I had more time, I would explore implementing additional solutions, such as offering a light mode toggle. This feature would allow users with specific visibility needs to switch to a high-contrast light mode, ensuring an inclusive experience for all users. Understanding the nuances of contrast standards and experimenting with dynamic theme options would be key next steps to fully resolve this issue.
+
+  ### *Screenshots from WAVE test*
+  ![WAVE screenshot 1](images/waveScreenshot1.png)
+  ![WAVE screenshot 2](images/waveScreenshot2.png)
+  ![WAVE screenshot 3](images/waveScreenshot3.png)
 ---
 
 # **FP3 \- Final Project Check-in**
@@ -151,11 +167,15 @@ Document the changes and progress of your project. How have you followed or chan
 
 ## Implementation Plan Updates
 
-- [ ] ...
+- [ ] Add keyboard interactions to ensure seamless navigation for users who rely on non-mouse inputs, such as arrow key navigation and space bar activation for pop-ups.
+- [ ] Incorporate animations for transitions between timeline milestones to enhance user engagement and provide a smoother browsing experience.
+- [ ] Refine the formatting of the timeline to improve its visual clarity and accessibility, ensuring all text and elements are properly aligned and consistently styled.
+- [ ] Test and debug the newly added interactions and animations to ensure functionality across different browsers and devices.
 
 ## Generative AI Use Plan Updates
 
-- [ ] ...
+- [ ] Utilize AI-assisted debugging tools to address coding challenges related to animations and keyboard interactions.
+- [ ] Generate accessible, user-friendly copy for timeline instructions and milestone descriptions to ensure clarity and consistency.
 
 Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-generative-ai-use-and-reflection).
 
