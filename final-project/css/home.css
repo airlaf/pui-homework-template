@@ -25,8 +25,8 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 48px; /* 3rem = 48px */
+  margin-bottom: 16px; /* 1rem = 16px */
   color: #F3F4F6; /* Lighter color for better contrast */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
@@ -34,8 +34,8 @@ h1 {
 }
 
 p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 19.2px; /* 1.2rem = 19.2px */
+  margin-bottom: 32px; /* 2rem = 32px */
   color: #D1D5DB; /* Updated to improve contrast */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
@@ -44,12 +44,12 @@ p {
 
 .btn-primary {
   display: inline-block;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+  padding: 12.8px 32px; /* 0.8rem = 12.8px, 2rem = 32px */
+  font-size: 16px; /* 1rem = 16px */
   color: #111; /* Darker text on the button for better contrast */
   background-color: #A5B4FC; /* Lightened button background for better contrast */
   border: none;
-  border-radius: 50px;
+  border-radius: 50px; /* No conversion needed, already in px */
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
