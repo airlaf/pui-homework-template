@@ -8,7 +8,7 @@ body {
   font-family: 'Instrument Sans', sans-serif;
   background: radial-gradient(circle, rgba(17, 24, 39, 1) 40%, #111);
   overflow: hidden;
-  color: #fff;
+  color: #E5E7EB; /* Updated to a lighter gray for better contrast */
 }
 
 #gradient-overlay {
@@ -27,37 +27,39 @@ body {
 h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #F3F4F6; /* Lighter color for better contrast */
   opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards; /* Reduced duration */
-  animation-delay: 0.2s; /* Reduced delay for quicker appearance */
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.2s;
 }
 
 p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: #D1D5DB; /* Updated to improve contrast */
   opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards; /* Reduced duration */
-  animation-delay: 0.8s; /* Reduced delay for quicker appearance */
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.8s;
 }
 
 .btn-primary {
   display: inline-block;
   padding: 0.8rem 2rem;
   font-size: 1rem;
-  color: #fff;
-  background-color: #7575EB;
+  color: #111; /* Darker text on the button for better contrast */
+  background-color: #A5B4FC; /* Lightened button background for better contrast */
   border: none;
   border-radius: 50px;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards; /* Reduced duration */
-  animation-delay: 1.4s; /* Reduced delay for quicker appearance */
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1.4s;
 }
 
 .btn-primary:hover {
-  background-color: #BDBDED;
+  background-color: #818CF8; /* Ensure hover state maintains sufficient contrast */
   transform: scale(1.05);
 }
 
