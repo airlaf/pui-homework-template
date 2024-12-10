@@ -86,43 +86,54 @@ For the following aspects of your project, edit the corresponding table cell to 
 - *Usage*: Whether you used / did not use this tool for the aspect. Enter [Yes/No]
 - *Productivity*: Give a rating on whether this tool makes your productivity for X aspect [1-Much Reduced, 2-Reduced, 3-Slightly Reduced, 4-Not Reduced nor Improved, 5-Slightly Improved, 6-Improved, 7-Much Improved].
 
-| Tool Name | Ratings | design | plan | write code | debug | \_ (other?) |
+| Tool Name | Ratings | design | plan | write code | debug | Accessibility |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| Tool1 | Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool1 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
-| Tool2| Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool2 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
+| ChatGPT | Usage | Yes | Yes | Yes | Yes | Yes |
+| ChatGPT | Productivity | 7 | 6 | 7 | 6 | 6 |
+| V0 | Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
+| V0 | Productivity | 4 | 2 | 3 | 3 | 4 |
 
 
 ### Usage Reflection
 
 > Impact on your design and plan 
 * It matched my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: I used ChatGPT extensively to troubleshoot specific issues, such as implementing keyboard interactions for my timeline feature and resolving WAVE accessibility issues. It aligned well with my needs for debugging and cleaning up code, making the process more efficient and manageable.
+  2. V0: This tool provided UI design suggestions, such as gradients and animations. While its responses were sometimes helpful conceptually, it often generated unusable or error-prone code.
+
 * It did not match my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: While reliable for technical and debugging tasks, it occasionally provided overly complex solutions that needed simplification to fit the project. 
+  2. V0: The tool failed to meet expectations as it often produced code that was either error filled or incompatible with the rest of my project.
+  
 * GenAI tool did/did not influence my final design and implementation plan because … For example, 
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: Significantly influenced my final implementation by helping structure clean, accessible code and enabling me to add polished animations through CSS keyframes.
+  2. V0: Had limited influence on the final design due to the high error rate and lack of reliability in its suggestions.
 
 > Use patterns
 * I accepted the generations when …  For example, 
-  1. Tool1: this tool once suggested … and I adjusted my design according to the suggestion because … 
-  2. Tool2: 
+  1. ChatGPT: Suggested practical fixes, such as structuring my code for accessibility and resolving contrast issues flagged by WAVE. For example, I implemented its recommendation to use aria labels to improve screen reader compatibility because it was clear and effective.
+  2. V0: Occasionally suggested visually appealing gradient concepts, such as a radial gradient effect for the background, which I adapted manually after testing and refining the output.
+ 
 * I critiqued/evaluated the generated suggestions by … For example, 
-  1. Tool1: this tool once suggested … but I modified/rejected the suggestion because … 
-  2. Tool2: 
+  1. ChatGPT: Carefully testing the provided code in the browser and ensuring it aligned with WAVE's accessibility standards. For example, when it generated a solution for keyboard navigation, I adjusted the logic to match my existing structure better.
+  2. V0: Reviewed its animation code in the browser, but often rejected it when errors arose or it clashed with other styles. I ultimately relied on ChatGPT to generate simpler and more effective animation solutions.
 
 
 > Pros and cons of using GenAI tools
 * Pros
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT:
+    * Provided reliable, accessible solutions to complex coding problems.
+    * Enhanced productivity by speeding up debugging and implementation tasks.
+    * Helped structure code for readability and maintainability.
+  2. V0:
+    * Offered creative UI ideas, such as animation effects and gradient designs, that inspired parts of my visual implementation.
 * Cons
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT:
+    * Occasionally provided overly complex or verbose solutions that required significant adaptation.
+    * Limited in suggesting creative visual design elements.
+  2. V0:
+    * Generated error-prone or incompatible code for animations and UI designs.
+    * Often lacked sufficient testing or context-awareness, leading to wasted time debugging its suggestions.
 
 
 ### Usage Log
